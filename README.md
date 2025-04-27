@@ -112,3 +112,5 @@ Regardless, having the repository define an entire project declaratively edited 
 - This also *might make (non-realtime) collaboration* possible for any arbitrary program / tool that can export it's project in a structured way in a standard file format.
 
 Some of the aforementioned issues will still plague the experience, such as large output files leading to a slow git usage experience, and rumoured issues with Git LFS only add to that. Especially for these kinds of projects it would be important to address these before git-based creative workflows can become more standardised.
+
+Also, git was never friendly to inexperienced programmers to begin with, it would be even harder for a non-programmer in a creative industry to use git.
