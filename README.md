@@ -101,7 +101,9 @@ This approach might not be the most scalable approach
 
 # Non Code Projects, tracked with git
 
-We could also potentially reuse the same proposal but consider projects which don't have code architecture, created by tools which export to standard data formats such as XML / JSON / etc. In this case, a custom merge strategy would need to be developed per-application which allows someone to combine two different pieces of work together in a desired way in order to resolve a merge conflict. 
+We could also potentially reuse the same proposal but consider projects which don't have code architecture, created by artistic programs and tools which export to standard data formats such as XML / JSON / etc. In this case, a custom merge strategy would need to be developed per-application which allows someone to combine two different pieces of work together in a desired way in order to resolve a merge conflict. 
+
+Obviously programs with proprietary formats would need extra work to deserialise project information (which would be invalidated on major applications versions) before it is committed.
 
 For example, imagine we're using a visual editor that spits out project data in XML, and two different branches have changes to an item in the XML that significantly changes the look of a big UI element. Do we want to add both elements together in the same project and let the user decide on how these individual elements are combined in the visual editor, leading to a uniquely merged output? A process that synthesizes ideas better than automatic merge conflict handling ever will? 
 
@@ -114,3 +116,4 @@ Regardless, having the repository define an entire project declaratively edited 
 Some of the aforementioned issues will still plague the experience, such as large output files leading to a slow git usage experience, and rumoured issues with Git LFS only add to that. Especially for these kinds of projects it would be important to address these before git-based creative workflows can become more standardised.
 
 Also, git was never friendly to inexperienced programmers to begin with, it would be even harder for a non-programmer in a creative industry to use git. It will only be easier if we can fix existing pain points and provide easy to use tooling which makes git trivial to use for non programmers.
+
