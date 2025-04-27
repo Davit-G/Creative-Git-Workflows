@@ -97,6 +97,7 @@ This approach might not be the most scalable approach
 - Large output files will lead to a bad developer experience when switching between branches and downloading / cloning asset files.
 - Not all projects have output items that are easily previewable. For example, instead of images / videos / audio, it could be binaries for the demoscene space or something similar, which might be hard to automate collecting previews for in CI.
 - The entire git repo needs to be tracked and stored locally if one wants to observe all the different variations and changes.
+- Any form of pre-commit hook or CI workflow takes time and might slow down the workflow.
 
 # Non Code Projects, tracked with git
 
