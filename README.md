@@ -6,8 +6,15 @@ This repository outlines some thoughts I've been having about using Git for crea
 ## Creative motivations
 
 For context, I've been producing electronic music as a hobby for a very long time. Often I've brought music or my general creative interests into programming as well, creating things such as 3d browser visualisations or using ray marching techniques and ANSI escape codes to draw 3d scenes in the terminal using ASCII characters.
+Here is an example:
+
+<img src="https://github.com/user-attachments/assets/5fb84ee8-0f24-43eb-9ca7-b6d4701386d4" alt="Description" width="1200">
 
 When I work on creative programming projects, I have lots of moments where I make interesting mistakes or changes to my code which I really want to revisit or utilise later, especially if the programming project creates artifacts such as images / visuals, or audio, I often find that I want to use these things and be able to reference them later down the line.
+
+An interesting variation:
+
+<img src="https://github.com/user-attachments/assets/46a89af0-f226-4212-a8c9-5ecc992f9a7f" alt="Description" width="600">
 
 In my opinion, creative work can be interpreted as state exploration. Often it's very freeform, often initially driven by inspiration or other random processes especially in the beginning, and over time the idea gets refined and worked on more until polished final ideas are produced (last step is optional 😭). Jonas Tyroller uses the analogy of a 2d ocean exploration [in their video about game dev ideation](https://youtu.be/o5K0uqhxgsE?si=TWy7WMzEj6kFkXg7).
 
@@ -90,3 +97,9 @@ This approach might not be the most scalable approach
 - Large output files will lead to a bad developer experience when switching between branches and downloading / cloning asset files.
 - Not all projects have output items that are easily previewable. For example, instead of images / videos / audio, it could be binaries for the demoscene space or something similar, which might be hard to automate collecting previews for in CI.
 - The entire git repo needs to be tracked and stored locally if one wants to observe all the different variations and changes.
+
+# Non Code Projects, tracked with git
+
+We could also potentially reuse the same proposal but consider projects which don't have code architecture, created by tools which export to standard data formats such as XML / JSON / etc. In this case, a custom merge strategy would need to be developed per-application which allows someone to combine two different pieces of work together in a desired way in order to resolve a merge conflict. 
+
+For example, we use a visual editor that spits out project data in XML. If two different branches have changes to a chunk that significantly change the look of a big UI element, do we want to add both branches together and let the user take elements from them in the visual editor program, and then get left with an entirely unique merged output at the end? This wouldn't cover all cases, since in some cases we'd just change small values and parameters to small ui elements, so maybe we'd have to pick between current and incoming changes for every changed chunk that is present.
