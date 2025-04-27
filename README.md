@@ -76,6 +76,7 @@ Treat a branch as an isolated creative idea which has a unique output / artifact
     - Merging is optional, old branches can still be abandoned or cherry picked where necessary.
 - `fork` ideas which have massive project level changes.
     - If an idea has largely surpassed the original concept, then it can be forked into a new repository to work on independently.
+    - This might be useful for game development, where ideas can be entirely redeveloped and turned into larger projects that need the more traditional git workflow.
 
 ## Potential efforts
 - This leaves room for potentially creating a new CLI tool which automatically updates READMEs on different branches to provide quick previews to assets.
